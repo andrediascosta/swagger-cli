@@ -192,7 +192,7 @@ function getHelpText (commandName) {
 /**
  * Writes error information to stderr and exits with a non-zero code
  *
- * @param {Error} err
+ * @param {Error} err - Error
  */
 function errorHandler (err) {
   let errorMessage = process.env.DEBUG ? err.stack : err.message;
