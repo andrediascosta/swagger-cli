@@ -99,18 +99,19 @@ The result of this method by default is written as JSON. It can be changed to YA
 swagger-cli bundle [options] <file>
 
 Options:
-    -o, --outfile <file>        The output file
+    -o, --outfile <file>         The output file
 
-    -r, --dereference           Fully dereference all $ref pointers
+    -r, --dereference[="ignore"] Fully dereference all $ref pointers
+                                 (ignore is used to ignore circular refs)
+    
+    -f, --format <spaces>        Formats the output using the given number of spaces
+                                 (the default is 2 spaces)
 
-    -f, --format <spaces>       Formats the output using the given number of spaces
-                                (the default is 2 spaces)
+    -t, --type <filetype>        Defines the output file type. The valid values are: json, yaml
+                                 (the default is JSON)
 
-    -t, --type <filetype>       Defines the output file type. The valid values are: json, yaml
-                                (the default is JSON)
-
-    -w, --wrap <column>         Set the line length for YAML strings
-                                (the default is no wrapping)
+    -w, --wrap <column>          Set the line length for YAML strings
+                                 (the default is no wrapping)
 ```
 
 
