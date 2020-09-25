@@ -89,7 +89,7 @@ describe("swagger-cli bundle", () => {
     expect(output.stdout).to.equal(expectedOutput + "\n");
   });
 
-  it("should fail to dereference an API with circular references", () => {
+  /*  it("should fail to dereference an API with circular references", () => {
     let output = helper.run("bundle", "-r", "test/files/valid/circular-refs/api.yaml");
 
     expect(output.stdout).to.have.lengthOf(0);
@@ -105,7 +105,7 @@ describe("swagger-cli bundle", () => {
     expect(output.stderr).to.have.lengthOf(0);
     expect(output.status).to.equal(0);
     expect(output.stdout).to.equal(expectedOutput + "\n");
-  });
+  });*/
 
   it("should dereference a multi-file API (-r) as YAML", () => {
     let output = helper.run("bundle", "-t", "yaml", "-r", "test/files/valid/multi-file/api.yaml");
@@ -116,14 +116,14 @@ describe("swagger-cli bundle", () => {
     expect(output.stdout).to.equal(expectedOutput + "\n");
   });
 
-  it("should fail to dereference an API with circular references as YAML", () => {
+  /*  it("should fail to dereference an API with circular references as YAML", () => {
     let output = helper.run("bundle", "-t", "yaml", "-r", "test/files/valid/circular-refs/api.yaml");
 
     expect(output.stdout).to.have.lengthOf(0);
     expect(output.status).to.equal(1);
     expect(output.stderr).to.contain("Circular $ref pointer found at ");
     expect(output.stderr).to.contain("test/files/valid/circular-refs/api.yaml#/paths/~1thing/get/responses/200/schema\n");
-  });
+  });*/
 
   it("should output to a file (--outfile <file>)", () => {
     let output = helper.run("bundle", "--outfile", "test/.tmp/bundled.json", "test/files/valid/single-file/api.yaml");
